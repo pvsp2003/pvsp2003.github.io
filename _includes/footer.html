@@ -1,0 +1,41 @@
+<style>
+    .footer-icons {
+    display: flex;
+    justify-content: center; /* Aligns icons in the center */
+    gap: 20px; /* Adds space between icons */
+}
+
+.footer-icons a {
+    text-decoration: none;
+    font-size: 24px; /* Adjust icon size */
+    color: whitesmoke; /* Adjust icon color */
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-icons a:hover {
+    color: #83358F; /* Change color on hover */
+}
+
+
+</style>
+<footer class="footer">
+     <p>&copy; {{site.username}}</p>
+    <div class="footer-icons">
+        <a aria-label="Send email" href="mailto:pvsp2000@gmail.com">
+          <i class="icon fa fa-envelope"></i>
+        </a>
+        <a aria-label="My LinkedIn" target="_blank" href="https://www.linkedin.com/in/pvs-prasanth">
+          <i class="icon fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a aria-label="My Instagram" target="_blank" href="https://www.instagram.com/pvsp_the_last_survivor">
+          <i class="icon fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a aria-label="My Github" target="_blank" href="https://github.com/pvsp2003">
+          <i class="icon fa fa-github" aria-hidden="true"></i>
+        </a>
+      </div>
+</footer>
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="{{ "/assets/js/sweet-scroll.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
+{% include google-analytics.html %}
