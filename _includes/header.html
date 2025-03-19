@@ -2,7 +2,7 @@
   <div class="header">
       <h1>
         <span class="site-title">{{site.username}}</span>
-        <span class="site-description">And I'm a <span class="dynamic-text"></span><span class="cursor"></span></span>
+        <span class="site-description">I'm <span class="dynamic-text"></span><span class="cursor"></span></span>
       </h1>
       <div class="header-icons">
         <a aria-label="Send email" href="mailto:pvsp2000@gmail.com">
@@ -40,7 +40,7 @@
           .dynamic-text {
             font-size: 2rem;
             font-weight: 600;
-            color: #ffcd38;
+            color: #83358F;
             display: inline;
         }
 
@@ -49,7 +49,7 @@
             display: inline-block;
             width: 2px;
             height: 30px;
-            background-color: #ffcd38;
+            background-color: #e0e0e0;
             animation: blink 0.8s infinite;
         }
 
@@ -61,7 +61,7 @@
 </style>
 <script>
   const dynamicText = document.querySelector('.dynamic-text');
-  const phrases = ["Web Developer", "Data Analyst",  "Android Developer"];
+  const phrases = ["a Web Developer", "a Data Analyst",  "an Android Developer","a Machine Learning Engineer"];
   let currentPhraseIndex = 0;
   let letterIndex = 0;
 
