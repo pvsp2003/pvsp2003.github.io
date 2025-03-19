@@ -2,7 +2,7 @@
   <div class="header">
       <h1>
         <span class="site-title">{{site.username}}</span>
-        <span class="site-description">{{site.user_title}}</span>
+        <span class="site-description dynamic-text"></span><span class="cursor">|</span>
       </h1>
       <div class="header-icons">
         <a aria-label="Send email" href="mailto:pvsp2000@gmail.com">
@@ -28,3 +28,50 @@
   </div>
   <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
 </div>
+
+<script>
+  const dynamicText = document.querySelector('.dynamic-text');
+  const phrases = ["Web Developer", "Data Analyst", "Android Developer"];
+  let currentPhraseIndex = 0;
+  let letterIndex = 0;
+  
+  function type() {
+      if (letterIndex < phrases[currentPhraseIndex].length) {
+          dynamicText.textContent += phrases[currentPhraseIndex].charAt(letterIndex);
+          letterIndex++;
+          setTimeout(type, 100); // Typing speed
+      } else {
+          setTimeout(deleteText, 1000); // Pause before deleting
+      }
+  }
+
+  function deleteText() {
+      if (letterIndex > 0) {
+          dynamicText.textContent = phrases[currentPhraseIndex].substring(0, letterIndex - 1);
+          letterIndex--;
+          setTimeout(deleteText, 50); // Deleting speed
+      } else {
+          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length; // Next phrase
+          setTimeout(type, 500); // Pause before typing again
+      }
+  }
+
+  // Start the animation
+  type();
+</script>
+
+<style>
+  .cursor {
+      display: inline-block;
+      width: 5px;
+      background-color: black;
+      margin-left: 5px;
+      animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+  }
+</style>
