@@ -2,7 +2,7 @@
   <div class="header">
       <h1>
         <span class="site-title">{{site.username}}</span>
-        <span class="site-description">I'm <span class="typed"></span></span>
+        <span class="site-description">And I'm a <span class="dynamic-text"></span><span class="cursor"></span></span>
       </h1>
       <div class="header-icons">
         <a aria-label="Send email" href="mailto:pvsp2000@gmail.com">
@@ -28,4 +28,64 @@
   </div>
   <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
 </div>
-<script src="/assets/js/typed.js"></script>
+<style>
+          .site-description {
+            font-size: 2rem;
+            color: #e0e0e0;
+            position: relative; /* Ensure it stays in place */
+            margin-top: 20px; /* Adjust this if needed */
+            display: inline; /* Ensures it stays inline with dynamic text */
+        }
+               /* Typing Animation */
+          .dynamic-text {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ffcd38;
+            display: inline;
+        }
+
+        /* Cursor Blink Animation */
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 30px;
+            background-color: #ffcd38;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+</style>
+<script>
+  const dynamicText = document.querySelector('.dynamic-text');
+  const phrases = ["Web Developer", "Data Analyst",  "Android Developer"];
+  let currentPhraseIndex = 0;
+  let letterIndex = 0;
+
+  function type() {
+      if (letterIndex < phrases[currentPhraseIndex].length) {
+          dynamicText.textContent += phrases[currentPhraseIndex].charAt(letterIndex);
+          letterIndex++;
+          setTimeout(type, 100); // Typing speed
+      } else {
+          setTimeout(deleteText, 1000); // Pause before starting to delete
+      }
+  }
+
+  function deleteText() {
+      if (letterIndex > 0) {
+          dynamicText.textContent = phrases[currentPhraseIndex].substring(0, letterIndex - 1);
+          letterIndex--;
+          setTimeout(deleteText, 50); // Deleting speed
+      } else {
+          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length; // Move to the next phrase
+          setTimeout(type, 500); // Pause before starting to type
+      }
+  }
+
+  // Start typing effect
+  type();
+</script>
