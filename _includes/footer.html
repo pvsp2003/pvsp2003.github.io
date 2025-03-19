@@ -15,11 +15,78 @@
 .footer-icons a:hover {
     color: #83358F; /* Change color on hover */
 }
+.contact-section {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #222;
+  text-align: center;
+}
+
+.contact-section p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007acc;
+  box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.2);
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #007acc;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #005fa3;
+}
+
 
 
 </style>
 <footer class="footer">
-     <p>&copy; {{site.username}}</p>
      <section id="contact" class="contact-section">
       <h2>Contact Me</h2>
       <p>Let's connect! Fill in your details below.</p>
@@ -48,7 +115,7 @@
         <button type="button" class="submit-btn">Send Message</button>
       </form>
     </section>
-    
+    <p>&copy; {{site.username}}</p>
     <div class="footer-icons">
         <a aria-label="Send email" href="mailto:pvsp2000@gmail.com">
           <i class="icon fa fa-envelope"></i>
