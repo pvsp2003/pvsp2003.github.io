@@ -18,7 +18,7 @@ This site showcases my professional profile, skills, and projects in software de
 ## 📬 Contact
 - **Email:** pvsp2000@gmail.com
 - **GitHub:** [pvsp2003](https://github.com/pvsp2003)
-- **LinkedIn:** [https://www.linkedin.com/in/pvs-prasanth/]
+- **LinkedIn:** [Venkata Satya Prasanth Pediredla](https://www.linkedin.com/in/pvs-prasanth/)
 
 ---
 
